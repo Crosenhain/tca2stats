@@ -1,3 +1,4 @@
+//https://github.com/Crosenhain/tca2stats
 //Really basic ajax stuff
 var xmlHttp;
 

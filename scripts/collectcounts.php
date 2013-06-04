@@ -1,5 +1,6 @@
 #!/usr/bin/php
 <?php
+//https://github.com/Crosenhain/tca2stats
 $dbuser="";
 $dbpass="";
 $dbhost="";
