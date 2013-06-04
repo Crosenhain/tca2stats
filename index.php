@@ -60,8 +60,8 @@ function DoNav(theUrl)
 <body>
 HTML;
 
-$dbconn = mysql_connect(STATS_DB_HOST,STATS_DB_USER,STATS_DB_PASS);
-$db = mysql_select_db(STATS_DB_NAME, $dbconn);
+$dbconn = mysql_connect(TCA2_DB_HOST,TCA2_DB_USER,TCA2_DB_PASS);
+$db = mysql_select_db(TCA2_DB_NAME, $dbconn);
 
 	$sql = "SELECT s.ip_address,s.game_port,g.display_name,g.query_protocol,ls.online,ls.map,ls.name,ls.max_players,ls.players,ls.service_id
 FROM tc_game_services s

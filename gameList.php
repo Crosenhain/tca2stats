@@ -1,15 +1,10 @@
 <?php
 
-//read-only mysql user that can access the tcadmin2 database
-$db_conn_user="";
-$db_conn_pass="";
-//tcadmin2 database
-$db_conn_db="";
-//tcadmin2 database host
-$db_conn_host="";
+//Setting things up
+require_once('inc/config.php');
 
-$dbconn = mysql_connect($db_conn_host,$db_conn_user,$db_conn_pass);
-$db = mysql_select_db($db_conn_db, $dbconn);
+$dbconn = mysql_connect(TCA2_DB_HOST,TCA2_DB_USER,TCA2_DB_PASS);
+$db = mysql_select_db(TCA2_DB_NAME, $dbconn);
 
 $game = htmlentities($_REQUEST['game']);
 

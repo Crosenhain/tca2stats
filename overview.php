@@ -1,4 +1,8 @@
 <?php
+
+//Setting things up
+require_once('inc/config.php');
+
 if (is_numeric($_GET['sid'])) {
     $sid = $_GET['sid'];
 }
@@ -83,13 +87,9 @@ div.individualservers {
                 data.addColumn('number', 'Players');
 
 HTML;
-$db_conn_user="";
-$db_conn_pass="";
-$db_conn_db="";
-$db_conn_host="";
 
-$dbconn = mysql_connect($db_conn_host,$db_conn_user,$db_conn_pass);
-$db = mysql_select_db($db_conn_db, $dbconn);
+$dbconn = mysql_connect(STATS_DB_HOST,STATS_DB_USER,STATS_DB_PASS);
+$db = mysql_select_db(STATS_DB_NAME, $dbconn);
 
 if ($_GET['sid']) {
         $sql = "SELECT datetime,SUM(players) AS players,SUM(max_players)

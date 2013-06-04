@@ -1,4 +1,8 @@
 <?php
+
+//Setting things up
+require_once('inc/config.php');
+
 if (is_numeric($_GET['sid'])) {
     $sid = $_GET['sid'];
 } else {
@@ -51,13 +55,9 @@ table.gameServers td.serverOffline {
 	var data = google.visualization.arrayToDataTable([
 		['Date Time', 'Players'],
 HTML;
-$db_conn_user="";
-$db_conn_pass="";
-$db_conn_db="";
-$db_conn_host="";
 
-$dbconn = mysql_connect($db_conn_host,$db_conn_user,$db_conn_pass);
-$db = mysql_select_db($db_conn_db, $dbconn);
+$dbconn = mysql_connect(TCA2_DB_HOST,TCA2_DB_USER,TCA2_DB_PASS);
+$db = mysql_select_db(TCA2_DB_NAME, $dbconn);
 
 $sql = "SELECT CONVERT_TZ(h.detailed_date,'+00:00','+10:30') AS query_time,h.players,ls.name,ls.online,ls.max_players,g.display_name
 FROM tc_game_service_detailed_stats h
